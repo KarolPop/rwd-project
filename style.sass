@@ -1,0 +1,560 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic)
+
+* 
+	box-sizing: border-box
+	
+body 
+	margin: 0
+	font-family: 'Open Sans', sans-serif
+	line-height: 150%
+
+
+.row
+	&:before,
+	&:after
+		content: " " 
+		display: table 
+		clear: both
+
+
+[class*="col-"]  
+	width: 100% 
+	padding: 0 12px 
+	float: left 
+	text-align: center
+	
+
+.container 
+	width: 100%
+	max-width: 1400px
+	margin: 0 auto
+	padding: 0 40px				
+
+.header 
+	background-color: #fff
+	box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1)
+	position: fixed
+	width: 100%
+	z-index: 3
+	margin: -64px 0 0 0
+
+ 
+.header ul 
+	margin: 0
+	padding: 0
+	list-style: none
+	overflow: hidden
+	background-color: #fff
+
+ 
+.header li a 
+	display: block
+	padding: 20px 20px
+	border-right: 1px solid #f4f4f4
+	text-decoration: none
+	color: #000
+
+ 
+.header li a:hover 
+	background-color: #f4f4f4
+
+ 
+.header .logo 
+	display: block
+	float: left
+	font-size: 2em
+	color: #000
+	padding: 10px 20px
+	text-decoration: none
+
+ 
+.header .menu 
+	clear: both
+	max-height: 0
+	transition: max-height .2s ease-out
+
+
+.header .menu-icon 
+	cursor: pointer
+	display: inline-block
+	float: right
+	padding: 28px 20px
+	position: relative
+	user-select: none
+
+ 
+.header .menu-icon .navicon 
+	background: #333
+	display: block
+	height: 2px
+	position: relative
+	transition: background .2s ease-out
+	width: 18px
+
+ 
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after 
+	background: #333
+	content: ''
+	display: block
+	height: 100%
+	position: absolute
+	transition: all .2s ease-out
+	width: 100%
+}
+ 
+.header .menu-icon .navicon:before 
+	top: 5px
+
+ 
+.header .menu-icon .navicon:after 
+	top: -5px
+
+
+.header .menu-btn 
+	display: none
+
+ 
+.header .menu-btn:checked ~ .menu 
+	max-height: 240px
+
+ 
+.header .menu-btn:checked ~ .menu-icon .navicon 
+	background: transparent
+
+ 
+.header .menu-btn:checked ~ .menu-icon .navicon:before 
+	transform: rotate(-45deg)
+
+ 
+.header .menu-btn:checked ~ .menu-icon .navicon:after 
+	transform: rotate(45deg)
+
+ 
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after 
+	top: 0
+
+		
+h1 
+	text-transform: uppercase	
+
+.hero 
+	background: url(https://hd.unsplash.com/photo-1429051883746-afd9d56fbdaf) 10% 45%
+	background-size: cover
+	width: auto
+	margin: 0 auto
+	position: relative
+	height: 400px
+ 
+.slogan 
+	float: right
+	margin-top: 80px
+	max-width: 800px
+	padding: 30px 200px 30px 30px
+	background: rgba(49, 50, 52, 0.6)
+	color: #FFF
+
+	h1 
+		font-weight: normal	
+
+	p 
+		font-weight: bold	
+		font-size: 30px
+		
+.links 	
+	max-width: 140px
+	margin: 0 auto
+	text-align: center
+	position: absolute 
+	left: 0 
+	bottom: 0 
+	right: 0
+
+	.link 
+		border-radius: 50%
+		background-color: #CCC
+		width: 40px
+		height: 40px
+		line-height: 40px
+		display: inline
+		text-decoration: none
+		margin-top: 25%
+		opacity: 1
+
+i.fa 
+	width: 150px
+	height: 150px
+	line-height: 150px
+	border-radius: 20%
+	cursor: pointer
+	margin: 50px 0 0 0
+	background: #3E474F
+	font-size: 80px
+	text-align: center
+	color: white
+	
+section
+	> .container 
+		margin: 50px auto	
+		text-align: center
+
+.goods 
+	a:link
+		text-decoration: none
+		color: inherit
+	a:visited
+		text-decoration: none
+		color: inherit
+
+
+=animacja($type: all, $time: .5s, $anim: linear)
+	transition: $type $time $anim
+	-moz-transition: $type $time $anim
+	-webkit-transition: $type $time $anim
+		
+.goods 
+	a:hover 
+		i.fa 
+			background: #00C7E8
+			+animacja()
+
+.goods
+	i.fa 
+		+animacja()	
+
+.works 
+	h1 
+		font-size: 40px	
+
+=tranzycja($type: all, $time: .8s, $anim: ease-in)
+	transition: $type $time $anim
+	-moz-transition: $type $time $anim
+	-webkit-transition: $type $time $anim
+
+.gallery 
+	img 
+		float: left
+		width: 100%
+		+tranzycja()
+		&:hover 
+			opacity: 0.5
+			cursor: pointer
+
+	.photo 
+		overflow: hidden	
+		position: relative
+		padding: 0
+
+
+.layer 
+	i.fa-search-plus 
+		font-size: 40px
+		height: 50px
+		width: 50px
+		line-height: 50px
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		margin: auto
+		margin-right: 60%
+		z-index: -1 
+		float: left
+		
+	i.fa-link
+		font-size: 40px
+		height: 50px
+		width: 50px
+		line-height: 50px
+		position: absolute
+		top: 0
+		left: 0
+		bottom: 0
+		right: 0
+		margin: auto
+		margin-left: 60%
+		z-index: -1 
+		float: left
+		
+
+.wraper 
+	position: relative
+	h2 
+		margin-top: 140px
+	
+.team 
+	margin-top: -50px	
+
+	.col-3 
+		overflow: hidden	
+
+	img 
+		border-radius: 50%
+		width: 170px
+		height: 170px
+		margin-top: -59px
+		overflow: hidden  
+		position: absolute
+		margin-left: -85px
+		+animacja()
+		
+		&:hover 
+			opacity: .5
+			+animacja()
+ 
+	.title     
+		top: 110px
+		left: 50%
+		transform: translateX(-50%)
+		padding-top: 85px
+		text-align: center
+		font-size: 30px
+		position: relative
+		line-height: auto
+		z-index: -1
+		width: 169px
+		height: 169px
+		background: #313234
+		border-radius: 50%
+		color: white
+
+	.manager 
+		padding-top: 65px
+		line-height: 33px	
+
+
+.wraper 
+	h2
+		margin-top: 140px
+
+.photo 
+	img
+		width: 100%
+		height: 100%
+		
+		&:hover 
+			width: 100%
+			height: 100%
+
+.numbers 
+	margin: 35px auto	
+	max-width: 1200px
+	
+.number
+	text-align: center	
+	text-transform: uppercase
+
+	h1 
+		color: #313332
+		font-size: 40px
+		margin: 0
+	
+	p 
+		color: #01C9ED
+		font-size: 20px
+		margin: 15px
+
+.footer-top 
+	min-height: 250px
+	width: 100%
+	background-color: #313332
+	color: white
+	margin: 0
+
+	.fancy 
+		padding-top: 30px
+	
+h1.fancy 
+	line-height: 0.5 em
+	text-align: center
+	display: inline-block
+	position: relative
+	
+	&:after 
+		content: ""
+		position: absolute
+		height: 5px
+		top: 75%
+		border-top: 5px solid white
+		width: 5vw
+		margin-left: 15px
+
+.footer-top 
+	.about
+		padding: 0 50px
+	.contact
+		padding: 0 50px
+		.row
+			margin: 15px 0
+		p
+			margin: 0
+	.socialmedia 
+		padding: 0 50px
+
+.socialmedia 
+	i.fa 
+		width: 37px
+		height: 37px
+		line-height: 37px
+		text-align: center
+		background-color: #01C9ED
+		color: white
+		font-size: 25px
+		margin: 5px
+		cursor: pointer
+
+footer 
+	margin: 0
+	text-align: center
+	height: 55px
+	background-color: black
+	color: white
+	position: relative
+	left: 0
+	right: 0
+	bottom: 0
+
+	h1 
+		line-height: 55px	
+		font-size: 20px
+		font-weight: bold
+		margin: 0
+
+.col-offset-0 
+	margin-left: 0
+.col-offset-1 
+	margin-left: 8.33%
+.col-offset-2 
+	margin-left: 16.66%
+.col-offset-3 
+	margin-left: 25%
+.col-offset-4 
+	margin-left: 33.33%
+.col-offset-5 
+	margin-left: 41.66%
+.col-offset-6 
+	margin-left: 50%
+.col-offset-7 
+	margin-left: 58.33%
+.col-offset-8 
+	margin-left: 66.66%
+.col-offset-9 
+	margin-left: 75%
+.col-offset-10 
+	margin-left: 83.33%
+.col-offset-11 
+	margin-left: 91.66%
+
+	
+/* For tablets: */ 
+.col-s-1 
+	width: 8.33% 
+.col-s-2 
+	width: 16.66% 
+.col-s-3 
+	width: 25% 
+.col-s-4 
+	width: 33.33% 
+.col-s-5 
+	width: 41.66% 
+.col-s-6 
+	width: 50% 
+.col-s-7 
+	width: 58.33% 
+.col-s-8 
+	width: 66.66% 
+.col-s-9 
+	width: 75% 
+.col-s-10 
+	width: 83.33% 
+.col-s-11 
+	width: 91.66% 
+.col-s-12 
+	width: 100% 
+
+@media screen and (min-width: 768px)  
+	/* For desktop: */ 
+	.col-m-1 
+		width: 8.33% 
+	.col-m-2 
+		width: 16.66% 
+	.col-m-3 
+		width: 25% 
+	.col-m-4 
+		width: 33.33% 
+	.col-m-5 
+		width: 41.66% 
+	.col-m-6 
+		width: 50% 
+	.col-m-7 
+		width: 58.33% 
+	.col-m-8 
+		width: 66.66% 
+	.col-m-9 
+		width: 75% 
+	.col-m-10 
+		width: 83.33% 
+	.col-m-11 
+		width: 91.66% 
+	.col-m-12 
+		width: 100% 
+
+@media screen and (max-width: 480px) 
+		
+	.works h1
+		line-height: 1.2em
+		font-size: 160%	
+		
+	.footer-top h1 
+		line-height: 1.2em
+		font-size: 160%	
+		
+	.slogan 
+		display: none
+
+@media screen and (min-width: 480px)  
+
+	.header li  
+		float: left 
+
+	.header li a
+		padding: 20px 30px;
+
+
+	.header .menu 
+		clear: none;
+		float: right;
+		max-height: none;
+
+	.header .menu-icon
+		display: none
+  
+ 
+  
+@media screen and (max-width: 767px) 
+	 
+	nav
+		img 
+			float: none
+			width: 100%
+			margin-bottom: 10px
+			text-align: center	
+		ul li
+			float: none
+			width: 100%
+			margin-bottom: 10px
+			text-align: center
+		
+	.goods
+		float: none
+		width: 100%
+		margin-bottom: 10px
+		text-align: center
+			
+	.works h1
+		float: none
+		width: 100%
+		margin-bottom: 10px
+text-align: center

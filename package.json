@@ -1,0 +1,35 @@
+{
+  "name": "kodilla-grunt-example",
+  "version": "1.0.0",
+  "description": "First grunt project ",
+  "main": "index.js",
+  "scripts": {
+    "test": "kodilla-project"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KarolPop/projects.git"
+  },
+  "keywords": [
+    "grunt"
+  ],
+  "author": "Karol Poplawski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KarolPop/projects/issues"
+  },
+  "homepage": "https://github.com/KarolPop/projects#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^1.2.1"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-imagemin": "^1.0.1",
+    "grunt-sass": "^1.2.1",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
